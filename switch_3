@@ -1,0 +1,37 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int main()
+{
+	char choice;
+	bool abort = false;
+	
+	do
+	{
+		cout << "System Error! [A]bort, [R]etry, or [I]gnore? ";
+		cin >> choice;
+		
+		switch (choice)
+		{
+			case 'A':
+			case 'a':
+				abort = true;
+				break;
+			case 'R':
+			case 'r':
+				cout << "Retrying...\n";
+				break;
+			case 'I':
+			case 'i':
+				cout << "Disk failure on Drive A:\n";
+			default: continue;	
+		}
+	}
+	
+	while (!abort);
+
+	getch();
+	return 0;
+}
